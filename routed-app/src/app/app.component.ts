@@ -16,11 +16,11 @@ export class AppComponent {
     constructor(public spotify: SpotifyService) { }
 
     submit(query: HTMLInputElement): void {
-    if (!query.value) {
+      if (!query.value) {
         return;
-    }
-    this.query = query.value;
-    this.obsTrack = this.spotify.searchTrack(this.query);
-    this.obsTrack.subscribe((data) => this.results = data);
+      }
+      this.query = query.value;
+      this.obsTrack = this.spotify.searchTrack(this.query);
+      this.obsTrack.subscribe((data) => this.results = data);
     }
 }
