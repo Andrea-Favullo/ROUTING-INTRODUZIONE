@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SpotifyService } from '../spotify.service';
+import { SpotifyService } from './spotify.service';
 
 @Component({
   selector: 'app-search',
