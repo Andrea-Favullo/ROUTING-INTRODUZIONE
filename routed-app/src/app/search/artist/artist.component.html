@@ -1,1 +1,17 @@
-<p>artist works!</p>
+<div *ngIf="artist">
+    <h1>{{ artist.name }}</h1>
+    <p>
+        <img src="{{ artist.images[1].url }}">
+    </p>
+    <p>Album:</p>
+    <ul *ngFor="let album of albums.items">
+      <li>
+        <p>
+          <a [routerLink]="['/albums', album.id]">
+            {{ album.name }}
+          </a>
+        </p>
+      </li>
+    </ul>
+    <p><a href (click)="back()">Back</a></p>
+</div>

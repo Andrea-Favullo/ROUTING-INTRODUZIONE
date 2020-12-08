@@ -1,1 +1,18 @@
-<p>album works!</p>
+<div *ngIf="album">
+    <h1>{{ album.name }}</h1>
+    <p>
+        <img src="{{ album.images[1].url }}">
+    </p>
+    <p>Data di rilascio: {{album.release_date}}</p>
+    <p>Tracce:</p>
+    <ul *ngFor="let track of tracks.items">
+      <li>
+        <p>
+          <a [routerLink]="['/tracks', track.id]">
+            {{ track.name }}
+          </a>
+        </p>
+      </li>
+    </ul>
+    <p><a href (click)="back()">Back</a></p>
+</div>
